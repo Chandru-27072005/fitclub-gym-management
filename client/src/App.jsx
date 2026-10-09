@@ -46,11 +46,10 @@ import "./App.css";
 
 
 
-const API = "http://localhost:5000/api/members";
+const API = `${import.meta.env.VITE_API_URL}/api/members`;
 
-const ATTENDANCE_API = "http://localhost:5000/api/attendance";
-
-const PAYMENT_API = "http://localhost:5000/api/payments";
+const ATTENDANCE_API = `${import.meta.env.VITE_API_URL}/api/attendance`;
+const PAYMENT_API = `${import.meta.env.VITE_API_URL}/api/payments`;
 
 // Attach the current admin JWT to authenticated API requests.
 async function apiFetch(url, options = {}) {
@@ -1266,7 +1265,7 @@ function App() {
 
     try {
 
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/login`, {
 
         method: "POST",
 
